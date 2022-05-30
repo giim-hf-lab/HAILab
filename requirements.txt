@@ -1,0 +1,24 @@
+pip==22.1.2
+
+aiohttp==3.8.1
+aiodns==3.0.0
+cchardet==2.1.7
+numpy==1.22.4
+opencv-python==4.6.0.66
+opencv-contrib-python==4.6.0.66
+protobuf<3.21
+requests==2.28.0
+websockets==10.3
+
+msgpack==1.0.4
+hypercorn==0.13.2
+fastapi==0.78.0
+pydantic
+
+-f https://www.paddlepaddle.org.cn/whl/windows/mkl/avx/stable.html
+paddlepaddle-gpu==2.3.0.post112
+paddleocr
+
+-f https://download.pytorch.org/whl/torch_stable.html
+torch==1.11.0+cu115
+torchvision==0.12.0+cu115
