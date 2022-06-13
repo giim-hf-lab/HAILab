@@ -1,4 +1,10 @@
-FROM nvidia/cuda:11.2.0-cudnn8-runtime-ubuntu20.04
+ARG CUDA_FULL_VERSION
+ARG CUDNN_MAJOR_VERSION
+ARG UBUNTU_VERSION
+
+FROM nvidia/cuda:${CUDA_FULL_VERSION}-cudnn${CUDNN_MAJOR_VERSION}-runtime-ubuntu${UBUNTU_VERSION}
+
+LABEL org.opencontainers.image.source="https://github.com/giim-hf-lab/HAILab"
 
 ARG DEBIAN_FRONTEND=noninteractive
 
