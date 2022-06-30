@@ -1,3 +1,6 @@
 [submodule "externals/yolov5"]
 	path = externals/yolov5
 	url = git@github.com:ultralytics/yolov5.git
+[submodule "externals/yolov6"]
+	path = externals/yolov6
+	url = git@github.com:meituan/YOLOv6.git
