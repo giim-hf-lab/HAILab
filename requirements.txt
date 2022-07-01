@@ -1,13 +1,11 @@
---extra-index-url https://download.pytorch.org/whl/cu113
--f https://www.paddlepaddle.org.cn/whl/windows/mkl/avx/stable.html
+--extra-index-url https://download.pytorch.org/whl/cu116
+# -f https://www.paddlepaddle.org.cn/whl/linux/mkl/avx/stable.html
 
 pip
 cython
 
-numpy
-scipy
-opencv-python
-opencv-contrib-python
+tqdm
+pandas
 scikit-learn
 scikit-image
 matplotlib
@@ -22,10 +20,23 @@ websockets
 
 msgpack
 pyyaml
+thop
 
 hypercorn
 fastapi
 pydantic
 
 torch
+torchaudio
 torchvision
+
+# paddlepaddle-gpu
+
+onnx
+# onnxruntime-gpu
+
+pillow
+numpy
+scipy
+opencv-python
+opencv-contrib-python

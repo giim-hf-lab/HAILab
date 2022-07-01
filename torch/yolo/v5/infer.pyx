@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# cython: language_level = 3, c_string_type = str, c_string_encoding = utf-8
+__all__ = ["Engine"]
 
 import numpy as np
 cimport numpy as np
@@ -26,7 +26,7 @@ cdef frozenset _YOLO_INPLACE_LAYERS = frozenset({
 cdef class Engine:
     cdef readonly double _conf_threshold, _iou_threshold
     cdef readonly object _model
-    cdef readonly np.ndarray[np.int64_t, ndim = 1] _classes
+    cdef readonly np.ndarray[np.uint64_t, ndim = 1] _classes
     cdef readonly list _name_mappings
 
     def __cinit__(self,
@@ -60,6 +60,8 @@ cdef class Engine:
         self._iou_threshold = iou_threshold
         name_mappings = self._name_mappings = getattr(model, "module", model).names
 
+        cdef size_t i
+        cdef str name
         cdef dict index_mapping = {
             name: i
             for i, name in enumerate(name_mappings)
@@ -68,7 +70,7 @@ cdef class Engine:
             index_mapping[name]
             for name in (set(name_mappings).difference(classes) if exclusion else classes)
             if name in index_mapping
-        }), dtype=np.int64)
+        }), dtype=np.uint64)
 
     cpdef list infer(self, np.ndarray[np.uint8_t, ndim = 3] image):
         cdef list retval = []

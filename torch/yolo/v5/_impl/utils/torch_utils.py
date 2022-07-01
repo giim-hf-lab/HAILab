@@ -1,6 +1,8 @@
 # YOLOv5 🚀 by Ultralytics, GPL-3.0 license
 """
 PyTorch utils
+
+01 July 2022 - optimise imports
 """
 
 import datetime
@@ -19,7 +21,7 @@ import torch.distributed as dist
 import torch.nn as nn
 import torch.nn.functional as F
 
-from utils.general import LOGGER
+from .general import LOGGER
 
 try:
     import thop  # for FLOPs computation
